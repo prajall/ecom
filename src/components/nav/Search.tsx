@@ -19,7 +19,7 @@ const SearchComponent = () => {
           <input
             type="text"
             placeholder="Search"
-            className="outline outline-1 bg-opacity-0 duration-300 w-[200px] lg:focus:w-[300px] mx-auto px-4 py-2  rounded-full"
+            className="outline outline-1 bg-none duration-300 w-[200px] lg:focus:w-[300px] mx-auto px-4 py-2  rounded-full"
           />
           <button
             type="submit"

@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { signIn, useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
 import Image from "next/image";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+
 // import { FcGoogle } from "react-icons/fc";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -30,6 +32,7 @@ const formSchema = z.object({
 });
 
 const LoginZ = () => {
+  const [isSubmitting, setIsSubmittine] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -50,11 +53,13 @@ const LoginZ = () => {
     },
   });
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsSubmittine(true);
     signIn("credentials", {
       email: values.email,
       password: values.password,
       redirect: false,
     });
+    setIsSubmittine(false);
     // redirect("/");
   }
 
@@ -113,13 +118,27 @@ const LoginZ = () => {
                   </FormItem>
                 )}
               />
-              <Button
-                type="submit"
-                variant="default"
-                className="w-full duration-300 my-10"
-              >
-                Submit
-              </Button>
+              {isSubmitting && (
+                <Button
+                  type="submit"
+                  variant="default"
+                  disabled
+                  className="w-full duration-300 my-10  "
+                >
+                  <p className="animate-spin ml-1">
+                    <AiOutlineLoading3Quarters />
+                  </p>
+                </Button>
+              )}
+              {!isSubmitting && (
+                <Button
+                  type="submit"
+                  variant="default"
+                  className="w-full duration-300 my-10"
+                >
+                  Submit
+                </Button>
+              )}
             </form>
           </Form>
 
