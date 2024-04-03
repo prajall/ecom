@@ -31,7 +31,7 @@ const ProductCard: React.FC<ProductProp> = ({ Product }) => {
   }
 
   return (
-    <div className="w-48 p-2 group rounded-md relative bg-white ">
+    <div className="w-52 p-4 group rounded-md relative bg-white dark:bg-gray-800 ">
       <Image
         src={require(`../../public/products/${image}`)}
         className="w-44 h-44 mb-2 rounded-md "

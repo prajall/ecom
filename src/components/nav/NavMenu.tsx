@@ -1,12 +1,10 @@
 "use client";
-import Profile from "./Profile";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { Button } from "../ui/button";
-import SearchComponent from "./Search";
-import { IoCartOutline } from "react-icons/io5";
 import Cart from "./Cart";
-import ToggleTheme from "./ToggleTheme";
+import Profile from "./Profile";
+import SearchComponent from "./Search";
 
 const NavMenu = () => {
   const { data: session } = useSession();
@@ -20,7 +18,6 @@ const NavMenu = () => {
   return (
     <div className="flex items-center gap-4">
       <SearchComponent />
-      <ToggleTheme />
       {!session?.user && (
         <div className="flex">
           <Link href={"/login"}>

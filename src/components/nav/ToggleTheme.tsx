@@ -14,8 +14,10 @@ const ToggleTheme = () => {
           setTheme("dark");
         }}
         title="Switch to dark mode"
+        className="flex gap-1 items-center"
       >
-        <IoMoonOutline size={"25"} />
+        <IoMoonOutline />
+        Dark Mode
       </button>
     );
   } else {
@@ -25,8 +27,10 @@ const ToggleTheme = () => {
           setTheme("light");
         }}
         title="Switch to light mode"
+        className="flex gap-1 items-center"
       >
-        <IoMdSunny size={"25"} />
+        <IoMdSunny />
+        Light Mode
       </button>
     );
   }
