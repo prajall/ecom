@@ -7,10 +7,10 @@ export default async function Home() {
     <>
       <main className="">
         <ShowCarousel />
-        <section className=" dark:bg-gray-900">
+        <section className="">
           <NewProduct />
         </section>
-        <section className="bg-zinc-100 dark:bg-gray-900">
+        <section className="">
           <Mens />
         </section>
       </main>

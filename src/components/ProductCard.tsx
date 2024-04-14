@@ -1,11 +1,13 @@
 "use client";
 import React, { useState } from "react";
-import tshirt from "../../../public/products/tshirt2.jpg";
 import Image from "next/image";
 import { FaHeart } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 interface ProductCard {
+  id: string;
   image: string;
   name: string;
   underText: string;
@@ -17,7 +19,7 @@ interface ProductProp {
 }
 
 const ProductCard: React.FC<ProductProp> = ({ Product }) => {
-  const { image, name, price, underText } = Product;
+  const { image, name, price, underText, id } = Product;
 
   const [isFav, setIsFav] = useState(false);
 
@@ -31,14 +33,19 @@ const ProductCard: React.FC<ProductProp> = ({ Product }) => {
   }
 
   return (
-    <div className="w-52 p-4 group rounded-md relative bg-white dark:bg-gray-800 ">
-      <Image
-        src={require(`../../public/products/${image}`)}
-        className="w-44 h-44 mb-2 rounded-md "
-        alt="tshirt"
-        width={140}
-        height={140}
-      />
+    <Link
+      href={`/product/${id}`}
+      className="w-60 p-4 group rounded-md relative bg-gray-50 "
+    >
+      <div className="overflow-hidden">
+        <Image
+          src={require(`../../public/products/${image}`)}
+          className="w-52 h-52 mb-2 rounded-md mx-auto group-hover:scale-110 duration-300"
+          alt="tshirt"
+          width={170}
+          height={170}
+        />
+      </div>
       <div className="h-20">
         <h3 className="font-semibold text-md mt-4 mb-2" title={name}>
           {shortName}
@@ -49,7 +56,7 @@ const ProductCard: React.FC<ProductProp> = ({ Product }) => {
       </div>
       <p className="my-3">Rs {price}</p>
 
-      <div className="tools absolute top-4 group-hover:flex hidden right-4">
+      <div className="tools absolute top-4 group-hover:fle hidden right-4">
         {!isFav && (
           <span className="cursor-pointer animate-pulse">
             <FaRegHeart size="16" />
@@ -61,7 +68,8 @@ const ProductCard: React.FC<ProductProp> = ({ Product }) => {
           </span>
         )}
       </div>
-    </div>
+      {/* </div> */}
+    </Link>
   );
 };
 

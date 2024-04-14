@@ -1,15 +1,16 @@
 import AddToCart from "@/components/AddToCart";
 import BuyNow from "@/components/BuyNow";
+import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import React from "react";
 
 const Animation = () => {
   return (
-    <div className="flex">
+    <MaxWidthWrapper className="flex gap-2 mt-40 ">
       <div className="mb-2 ">
-        <AddToCart />
+        <BuyNow />
       </div>
-      <BuyNow />
-    </div>
+      <AddToCart />
+    </MaxWidthWrapper>
   );
 };
 

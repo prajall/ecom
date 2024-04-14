@@ -10,7 +10,7 @@ const NewProduct = () => {
   return (
     <ProductLists title="New Collections" link="mens">
       {products.map((product, index) => {
-        return <ProductCard key={index} Product={product} />;
+        return <ProductCard Product={product} key={index} />;
       })}
     </ProductLists>
   );

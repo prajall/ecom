@@ -25,17 +25,15 @@ const AddToCart = () => {
   }, [hoverCart]);
 
   return (
-    <MaxWidthWrapper>
-      <Button
-        className="flex gap-1 w-40"
-        onMouseEnter={() => setHoverCart(true)}
-        onMouseLeave={() => setHoverCart(false)}
-        variant={"outline"}
-      >
-        Add to Cart
-        <Player icon={cart} ref={playerRef} colorize={iconColor} />
-      </Button>
-    </MaxWidthWrapper>
+    <Button
+      className="flex gap-1 w-40"
+      onMouseEnter={() => setHoverCart(true)}
+      onMouseLeave={() => setHoverCart(false)}
+      variant={"outline"}
+    >
+      Add to Cart
+      <Player icon={cart} ref={playerRef} colorize={iconColor} />
+    </Button>
   );
 };
 

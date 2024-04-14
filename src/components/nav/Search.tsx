@@ -14,12 +14,12 @@ const SearchComponent = () => {
 
   return (
     <>
-      <div className="mx-auto flex items-center">
-        <form className="flex items-center relative ">
+      <div className="mx-auto flex items-center w-full">
+        <form className="flex items-center relative w-full">
           <input
             type="text"
             placeholder="Search"
-            className="outline outline-1 bg-none duration-300 w-[200px] lg:focus:w-[300px] mx-auto px-4 py-1  rounded-sm"
+            className="outline outline-1 bg-zinc-50 duration-300 w-full lg:focus:w-[300px] mx-auto px-4 py-2  rounded-full"
           />
           <button
             type="submit"

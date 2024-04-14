@@ -25,16 +25,14 @@ const BuyNow = () => {
   }, [hoverCart]);
 
   return (
-    <MaxWidthWrapper>
-      <Button
-        className="flex gap-1 w-40"
-        onMouseEnter={() => setHoverCart(true)}
-        onMouseLeave={() => setHoverCart(false)}
-      >
-        Buy Now
-        <Player icon={bag} ref={playerRef} colorize={iconColor} />
-      </Button>
-    </MaxWidthWrapper>
+    <Button
+      className="flex gap-1 w-40"
+      onMouseEnter={() => setHoverCart(true)}
+      onMouseLeave={() => setHoverCart(false)}
+    >
+      Buy Now
+      <Player icon={bag} ref={playerRef} colorize={iconColor} />
+    </Button>
   );
 };
 
