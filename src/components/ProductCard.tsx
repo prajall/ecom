@@ -35,7 +35,7 @@ const ProductCard: React.FC<ProductProp> = ({ Product }) => {
   return (
     <Link
       href={`/product/${id}`}
-      className="w-60 p-4 group rounded-md relative bg-gray-50 "
+      className="w-60 p-4 group rounded-md relative bg-gray-50 dark:bg-zinc-900"
     >
       <div className="overflow-hidden">
         <Image

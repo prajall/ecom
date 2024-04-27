@@ -27,6 +27,9 @@ const formSchema = z.object({
   password: z.string().min(8, {
     message: "Password must be mininmum 8 characters",
   }),
+  confirmPassword: z.string().min(8, {
+    message: "Password must be mininmum 8 characters",
+  }),
 });
 
 const LoginZ = () => {
@@ -63,7 +66,7 @@ const LoginZ = () => {
       <div className="h-[80vh] flex items-center">
         <div className=" w-[350px] sm:w-[400px] md:w-[450px] rounded-lg shadow-sm mx-auto py-7 px-5 ">
           <h2 className="font-extrabold text-xl text-center mb-5 ">
-            Welcome 👋
+            Sign up to Kit 😉
           </h2>
           <button
             onClick={loginWithGoogle}
@@ -113,20 +116,38 @@ const LoginZ = () => {
                   </FormItem>
                 )}
               />
+              <FormField
+                control={form.control}
+                name="confirmPassword"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Confirm Password:</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="Confirm Password"
+                        {...field}
+                        type="password"
+                      />
+                    </FormControl>
+
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
               <Button
                 type="submit"
                 variant="default"
                 className="w-full duration-300 my-10"
               >
-                Submit
+                Register
               </Button>
             </form>
           </Form>
 
           <p className="w-full text-center mt-8 text-muted-foreground">
-            Not registered?{" "}
+            Already have an account?{" "}
             <Link href="/register" className="text-blue-700 hover:underline">
-              Register
+              Login
             </Link>
           </p>
         </div>

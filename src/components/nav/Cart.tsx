@@ -18,7 +18,7 @@ const Cart = () => {
         <SheetTrigger>
           <IoCartOutline size={30} />
         </SheetTrigger>
-        <SheetContent>contenet</SheetContent>
+        <SheetContent>Cart Items</SheetContent>
       </Sheet>
     </>
   );

@@ -3,7 +3,6 @@ import { PrismaClient } from "@prisma/client";
 import NextAuth, { NextAuthConfig } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import google from "next-auth/providers/google";
-import { User } from "./db/models/userModel";
 
 interface user {
   email: string;
@@ -13,7 +12,6 @@ interface user {
 
 const prisma = new PrismaClient();
 const config: NextAuthConfig = {
-  // providers:[google],
   providers: [
     google,
     Credentials({
@@ -29,57 +27,60 @@ const config: NextAuthConfig = {
       },
       async authorize(credentials) {
         try {
-          const user = await User.findOne({ email: credentials.email });
-          console.log("user,", user);
+          const user = await prisma.user.findUnique({
+            where: { email: credentials.email },
+            select: { email: true },
+          });
+          console.log(user);
+
           if (!user) {
-            throw new Error("No user found");
+            throw new Error("no existing user");
           } else {
-            console.log("user found: ", user);
-            return { name: user.email, email: user.email };
+            return { id: user.id, email: user.email };
           }
         } catch (error) {
-          console.log("login error: ", error);
+          console.error("Login error:", error.message);
         }
       },
     }),
   ],
   callbacks: {
     async signIn(user) {
-      console.log("GOOGLE USER", user.user.email);
-
-      // if (user.provider == "google") {
-      try {
-        const existingUser = await prisma.user
-          .findUnique({ where: { email: user.user.email } })
-          .catch((err) => {
-            // throw new Error("Error cchecking user")
-            console.log("error checking user: ", err);
-          });
-        console.log("existingUser: ", existingUser);
-        if (!existingUser) {
-          console.log("no existingUser");
-
-          const newUser = prisma.user
-            .create({
-              data: {
-                email: user.user.email,
-                name: user.user.name,
-                image: user.user.image,
-              },
-            })
+      if (user.account.provider == "google") {
+        try {
+          const existingUser = await prisma.user
+            .findUnique({ where: { email: user.user.email } })
             .catch((err) => {
-              console.log("Error creating error: ", err);
+              console.log("error checking user: ", err);
             });
-          // console.log("newUser created: ", newUser);
-        }
+          console.log("existingUser: ", existingUser);
+          if (!existingUser) {
+            console.log("no existingUser Creating new user");
 
-        return true;
-      } catch (error) {
-        console.error("Error registering Google user:", error);
-        return false;
+            const newUser = prisma.user
+              .create({
+                data: {
+                  email: user.user.email,
+                  name: user.user.name,
+                  image: user.user.image,
+                },
+              })
+              .catch((err) => {
+                console.log("Error creating error: ", err);
+              });
+            console.log("new Google user created: ", newUser);
+            return { email: user.user.email, name: user.user.name };
+          }
+          return false;
+        } catch (error) {
+          console.error("Error registering Google user:", error);
+          return false;
+        }
+      }
+      if (user.account?.provider == "credentials") {
+        return { message: "custom message from server" };
       }
       return false;
-      // }
     },
   },
 };
