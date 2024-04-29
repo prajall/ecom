@@ -68,9 +68,7 @@ const LoginZ = () => {
     <MaxWidthWrapper>
       <div className="h-[80vh] flex items-center">
         <div className=" w-[350px] sm:w-[400px] md:w-[450px] rounded-lg shadow-sm mx-auto py-7 px-5 ">
-          <h2 className="font-extrabold text-xl text-center mb-5 ">
-            Welcome 👋
-          </h2>
+          <h2 className="font-extrabold text-xl text-center mb-5 ">Login</h2>
           <button
             onClick={loginWithGoogle}
             className="mx-auto text-center w-full border-2 hover:dark:bg-slate-900 duration-300 px-2 py-3 my-10 rounded-md flex justify-center "

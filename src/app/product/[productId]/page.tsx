@@ -5,6 +5,8 @@ import product from "@/products";
 import AddToCart from "@/components/AddToCart";
 import BuyNow from "@/components/BuyNow";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import { useParams } from "next/navigation";
+import dummyProducts from "@/products";
 
 const ProductDetail = () => {
   const [selectedSize, setSelectedSize] = useState("S");
@@ -14,28 +16,26 @@ const ProductDetail = () => {
   const handleClick = (size: string) => {
     setSelectedSize(size);
   };
+
+  const productId = useParams().productId;
+  const product = dummyProducts.find((product) => product.id === productId);
+  console.log(product);
+
   return (
     <MaxWidthWrapper className="flex flex-col lg:flex-row gap-4 py-20 ">
       <div className=" lg:w-1/2">
         <Image
-          src={require(`../../../../public/products/${product[7].image}`)}
+          src={require(`../../../../public/products/${product?.image}`)}
           alt="YK Disney Girls Pink Moans Printed Dress"
-          className=" w-full max-w-[500px] mx-auto rounded-lg"
+          className="  w-[400px] mx-auto rounded-lg"
         />
       </div>
       <div className="flex flex-col  mt-6">
-        <h3 className="text-2xl font-bold">
-          YK Disney Girls Pink Moans Printed Dress
-        </h3>
-        <p className="text-gray-700 mt-4 text-lg">
-          $80.00 <del>$100.00</del>
-        </p>
+        <h3 className="text-2xl font-bold">{product?.name}</h3>
+        <p className="text-gray-700 mt-4 text-lg">Rs {product?.price}</p>
 
         <div className="mt-6">
-          <p className="text-gray-700 mt-2">
-            Colored tunic, Orange, black, Green, willow with a high quality
-            fined tuned fabrics
-          </p>
+          <p className="text-gray-700 mt-2">{product?.underText}</p>
         </div>
         <p className="text-md font-semibold mt-4">Sizes</p>
 
@@ -54,13 +54,10 @@ const ProductDetail = () => {
             </button>
           ))}
         </div>
-        <div className="flex gap-4 mt-10 justify-center">
-          <button>
-            <BuyNow />
-          </button>
-          <button>
-            <AddToCart />
-          </button>
+        <div className="flex gap-4 mt-10 ">
+          <AddToCart />
+
+          <BuyNow />
         </div>
       </div>
     </MaxWidthWrapper>

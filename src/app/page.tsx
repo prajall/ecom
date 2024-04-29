@@ -6,7 +6,7 @@ export default async function Home() {
   return (
     <>
       <main className="">
-        <ShowCarousel />
+        {/* <ShowCarousel /> */}
         <section className="">
           <NewProduct />
         </section>

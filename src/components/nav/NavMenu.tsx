@@ -22,7 +22,7 @@ const NavMenu = () => {
         <div className="flex">
           <Link
             href={"/login"}
-            className="bg-zinc-950 dark:bg-zinc-100 text-zinc-50 dark:text-black text-md px-4 rounded-full py-2 "
+            className="bg-slate-900 dark:bg-zinc-100 text-zinc-50 dark:text-black text-md px-4 rounded-full py-2 "
           >
             Login
           </Link>

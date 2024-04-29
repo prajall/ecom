@@ -6,6 +6,7 @@ import Navbar from "@/components/nav/Navbar";
 import Providers from "@/components/Providers";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Footer from "@/components/Footer";
+import Sidebar from "@/components/Sidebar";
 
 // const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({ weight: "500", subsets: ["latin"] });
@@ -29,7 +30,6 @@ export default function RootLayout({
       >
         <Providers>
           <Navbar />
-
           <main className="min-h-screen flex flex-col">
             <div className="flex-grow flex-1">{children}</div>
           </main>

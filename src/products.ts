@@ -69,15 +69,6 @@ const dummyProducts: product[] = [
     price: 2100,
     category: ["Onepieces", "women"],
   },
-
-  {
-    id: "8",
-    name: "Red T-shirt for men",
-    underText: "Random Under text for testing",
-    image: "tshirt3.jpg",
-    price: 700,
-    category: ["t-shirts", "mens"],
-  },
   {
     id: "3",
     name: "Mens Dark trouser",

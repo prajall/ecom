@@ -40,7 +40,7 @@ const ProductCard: React.FC<ProductProp> = ({ Product }) => {
       <div className="overflow-hidden">
         <Image
           src={require(`../../public/products/${image}`)}
-          className="w-52 h-52 mb-2 rounded-md mx-auto group-hover:scale-110 duration-300"
+          className="w-52 h-52 mb-2 rounded-md mx-auto group-hover:scale-105 duration-300"
           alt="tshirt"
           width={170}
           height={170}
@@ -50,9 +50,6 @@ const ProductCard: React.FC<ProductProp> = ({ Product }) => {
         <h3 className="font-semibold text-md mt-4 mb-2" title={name}>
           {shortName}
         </h3>
-        <p className="text-muted-foreground text-xs mb-4 " title={underText}>
-          {underText}
-        </p>
       </div>
       <p className="my-3">Rs {price}</p>
 
