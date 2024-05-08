@@ -41,7 +41,7 @@ const ShowCarousel = () => {
                 <h3 className="text-4xl">Classic Exclusive</h3>
                 <h2 className="text-5xl font-bold my-4">Women's collection</h2>
                 <h3 className="text-4xl">Upto 40% off</h3>
-                <Button variant="default" className="mt-6">
+                <Button variant="default" className="mt-6 bg-slate-800 ">
                   Shop Now <FaArrowRight className="ml-2" />
                 </Button>
               </div>

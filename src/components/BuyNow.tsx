@@ -26,7 +26,7 @@ const BuyNow = () => {
 
   return (
     <Button
-      className="flex gap-1 w-40"
+      className="flex gap-1 w-40 bg-slate-800 hover:bg-slate-700"
       onMouseEnter={() => setHoverCart(true)}
       onMouseLeave={() => setHoverCart(false)}
     >

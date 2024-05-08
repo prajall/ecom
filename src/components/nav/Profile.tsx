@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { signOut } from "next-auth/react";
 import { PiSignOutBold } from "react-icons/pi";
-import ToggleTheme from "./ToggleTheme";
 
 type userProps = {
   name: string;
@@ -36,9 +35,7 @@ const Profile = ({ user }: { user: userProps }) => {
         <DropdownMenuContent className="  mt-1">
           <DropdownMenuLabel>{user.name || user.email}</DropdownMenuLabel>
           <DropdownMenuSeparator />
-          <DropdownMenuItem className="cursor-pointer hover:bg-slate-100">
-            <ToggleTheme />
-          </DropdownMenuItem>
+
           <DropdownMenuItem className="cursor-pointer hover:bg-slate-100">
             <button
               onClick={() => {

@@ -6,8 +6,13 @@ export default async function Home() {
   return (
     <>
       <main className="">
+<<<<<<< HEAD
         <ShowCarousel />
         <section className="mx-auto">
+=======
+        {/* <ShowCarousel /> */}
+        <section className="">
+>>>>>>> 9ab6dd659e4a28914306044f96024ab6de0af47c
           <NewProduct />
         </section>
         <section className="">
