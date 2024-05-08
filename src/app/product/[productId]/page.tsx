@@ -1,10 +1,11 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import product from "@/products";
+import products from "@/products";
 import AddToCart from "@/components/AddToCart";
 import BuyNow from "@/components/BuyNow";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import { useParams } from "next/navigation";
 
 const ProductDetail = () => {
   const [selectedSize, setSelectedSize] = useState("S");
@@ -14,13 +15,17 @@ const ProductDetail = () => {
   const handleClick = (size: string) => {
     setSelectedSize(size);
   };
+
+  const productId = useParams().productId;
+  const product = products.find((product) => product.id === productId);
+
   return (
     <MaxWidthWrapper className="flex flex-col lg:flex-row gap-4 py-20 ">
       <div className=" lg:w-1/2">
-        <Image
-          src={require(`../../../../public/products/${product[7].image}`)}
-          alt="YK Disney Girls Pink Moans Printed Dress"
-          className=" w-full max-w-[500px] mx-auto rounded-lg"
+        <img
+          src={product?.image}
+          className=" w-full aspect-[3/4] "
+          alt="tshirt"
         />
       </div>
       <div className="flex flex-col  mt-6">

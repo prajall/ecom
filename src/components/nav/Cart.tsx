@@ -10,8 +10,11 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import cart from "@/cart";
 
 const Cart = () => {
+  console.log(cart);
+
   return (
     <>
       <Sheet>

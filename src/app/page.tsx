@@ -7,7 +7,7 @@ export default async function Home() {
     <>
       <main className="">
         <ShowCarousel />
-        <section className="">
+        <section className="mx-auto">
           <NewProduct />
         </section>
         <section className="">

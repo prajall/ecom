@@ -1,10 +1,23 @@
 "use client";
+import image1 from "../../public/products/women1.jpeg";
 import React, { useState } from "react";
 import Image from "next/image";
 import { FaHeart } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import dummyProducts from "@/products";
+import {
+  Antic_Didone,
+  Belleza,
+  Della_Respira,
+  Eagle_Lake,
+  Italiana,
+  Josefin_Sans,
+  Marcellus,
+  Poppins,
+} from "next/font/google";
+import { cn } from "@/lib/utils";
 
 interface ProductCard {
   id: string;
@@ -24,50 +37,35 @@ const ProductCard: React.FC<ProductProp> = ({ Product }) => {
   const [isFav, setIsFav] = useState(false);
 
   let shortName = name;
-  if (name.length > 45) {
-    shortName = name.substring(0, 45) + "...";
-  }
-  let shortUnderText = underText;
-  if (underText.length > 45) {
-    shortUnderText = underText.substring(0, 45) + "...";
+  if (name.length > 40) {
+    shortName = name.substring(0, 40) + "...";
   }
 
   return (
     <Link
       href={`/product/${id}`}
-      className="w-60 p-4 group rounded-md relative bg-gray-50 dark:bg-zinc-900"
+      className="w-full group bg-gray-50 dark:bg-zinc-900 my-4 py-2 font-semibold"
     >
-      <div className="overflow-hidden">
-        <Image
-          src={require(`../../public/products/${image}`)}
-          className="w-52 h-52 mb-2 rounded-md mx-auto group-hover:scale-110 duration-300"
+      <div className="overflow-hidden relative">
+        <img
+          src={image}
+          className=" w-full aspect-[3/4] mx-auto group-hover:scale-105 duration-300 group-hover:blur-sm"
           alt="tshirt"
-          width={170}
-          height={170}
         />
+        <div className="box hidden group-hover:flex absolute z-50 top-[45%] left-[50%] translate-x-[-50%] border border-white text-white px-3 py-2">
+          View Product
+        </div>
       </div>
-      <div className="h-20">
-        <h3 className="font-semibold text-md mt-4 mb-2" title={name}>
+      <div className="p-1">
+        <h3 className="  mt-2 text-center" title={name}>
           {shortName}
         </h3>
-        <p className="text-muted-foreground text-xs mb-4 " title={underText}>
+        {/* <p className="text-muted-foreground text-xs mb-4 " title={underText}>
           {underText}
-        </p>
+        </p> */}
+        <p className=" mt-2 text-center text-sm">Rs {price}</p>
       </div>
-      <p className="my-3">Rs {price}</p>
 
-      <div className="tools absolute top-4 group-hover:fle hidden right-4">
-        {!isFav && (
-          <span className="cursor-pointer animate-pulse">
-            <FaRegHeart size="16" />
-          </span>
-        )}
-        {isFav && (
-          <span className="cursor-pointer ">
-            <FaHeart color="#f00" size={16} />
-          </span>
-        )}
-      </div>
       {/* </div> */}
     </Link>
   );
