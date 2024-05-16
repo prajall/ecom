@@ -22,6 +22,7 @@ import Link from "next/link";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { FcGoogle } from "react-icons/fc";
 import axios from "axios";
+
 const formSchema = z.object({
   email: z.string().email(),
   password: z.string().min(8, {
@@ -47,6 +48,7 @@ const LoginZ = () => {
     defaultValues: {
       email: "prajalmhrzn@gmail.com",
       password: "password",
+      confirmPassword: "password",
     },
   });
   async function onSubmit(values: z.infer<typeof formSchema>) {
@@ -56,19 +58,24 @@ const LoginZ = () => {
         password: values.password,
       });
       console.log(registeredUser);
-    } catch (error) {
-      console.log("/register ERROR: ", error);
+    } catch (error: any) {
+      if (error.response.data) {
+        console.log(
+          "ERROR HANDLED SUCCESSFULLY: ",
+          error.response.data.message
+        );
+      } else {
+        console.log("/register ERROR: ", error);
+      }
     }
-
-    // redirect("/");
   }
 
   return (
     <MaxWidthWrapper>
-      <div className="h-[80vh] flex items-center">
+      <div className=" flex items-center">
         <div className=" w-[350px] sm:w-[400px] md:w-[450px] rounded-lg shadow-sm mx-auto py-7 px-5 ">
           <h2 className="font-extrabold text-xl text-center mb-5 ">
-            Sign up to Kit 😉
+            Sign up to Kit
           </h2>
           <button
             onClick={loginWithGoogle}

@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["rukminim2.flixcart.com", "marketplace.canva.com"],
+    domains: ["dkemhji6i1k0x.cloudfront.net"],
   },
 };
 

@@ -13,7 +13,7 @@ const loader = () => {
     else setLoadercolor("#f3f2f3");
   }, [theme]);
   return (
-    <div className="w-full h-full mx-auto flex items-center justify-center top-0 -z-20 fixed">
+    <div className="w-full h-full mx-auto flex items-center justify-center  -z-20 ">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={42}

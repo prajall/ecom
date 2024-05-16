@@ -12,7 +12,7 @@ import Sidebar from "@/components/Sidebar";
 const poppins = Poppins({ weight: "500", subsets: ["latin"] });
 const font = Marcellus({ weight: "400", subsets: ["latin"] });
 export const metadata: Metadata = {
-  title: "Krist | Easy Fashion solution",
+  title: "Kit | Easy Fashion solution",
   description: "Fashion",
 };
 
@@ -31,13 +31,15 @@ export default function RootLayout({
       >
         <MaxWidthWrapper>
           <Providers>
-            <Navbar />
-            <main className="min-h-screen flex flex-col mx-auto ">
-              <div className="flex-grow flex-1">{children}</div>
-            </main>
+            <div className="min-h-screen">
+              <Navbar />
+              <main className=" flex flex-col mx-auto ">
+                <div className="flex-grow flex-1">{children}</div>
+              </main>
+            </div>
           </Providers>
-          <Footer />
         </MaxWidthWrapper>
+        <Footer />
       </body>
     </html>
   );

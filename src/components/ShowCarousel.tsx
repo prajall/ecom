@@ -65,37 +65,35 @@ const ShowCarousel = () => {
             </MaxWidthWrapper>
           </CarouselItem> */}
         <CarouselItem>
-          <img
+          <Image
             src={
-              "https://marketplace.canva.com/EAFoEJMTGiI/1/0/1600w/canva-beige-aesthetic-new-arrival-fashion-banner-landscape-cNjAcBMeF9s.jpg"
+              "https://dkemhji6i1k0x.cloudfront.net/000_clients/84990/page/84990F5y57DsP.jpg"
             }
             alt="ImageBanner"
-            // width={700}
-            // height={350}
-            className="w-full"
+            width={1000}
+            height={300}
+            className="w-full aspect-[10/3]"
           />
         </CarouselItem>
 
         <CarouselItem>
           <img
             src={
-              "https://images.template.net/178234/fashion-facebook-ad-banner-template-edit-online.jpg"
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj0ZaFLeA044RXhcBP2ry1-lGKYH9w8x-D7Y1GaAI0Cg&s"
             }
             alt="ImageBanner"
-            // width={700}
-            // height={350}
-            className="w-full aspect-[2/1]"
+            className="w-full aspect-[10/3]"
           />
         </CarouselItem>
         <CarouselItem>
           <img
             src={
-              "https://marketplace.canva.com/EAFoEJMTGiI/1/0/1600w/canva-beige-aesthetic-new-arrival-fashion-banner-landscape-cNjAcBMeF9s.jpg"
+              "https://dkemhji6i1k0x.cloudfront.net/000_clients/84990/page/84990yNL7ADjD.jpg"
             }
             alt="ImageBanner"
             // width={700}
             // height={350}
-            className="w-full"
+            className="w-full aspect-[10/3]"
           />
         </CarouselItem>
       </CarouselContent>

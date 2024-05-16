@@ -55,12 +55,12 @@ const LoginZ = () => {
   });
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmittine(true);
-    // const signinResponse = await signIn("credentials", {
-    //   email: values.email,
-    //   password: values.password,
-    //   redirect: false,
-    // });
-    // console.log(signinResponse);
+    const signinResponse = await signIn("credentials", {
+      email: values.email,
+      password: values.password,
+      redirect: false,
+    });
+    console.log(signinResponse);
 
     setIsSubmittine(false);
     // redirect("/");
