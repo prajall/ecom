@@ -14,11 +14,10 @@ import {
 
 const ShowCarousel = () => {
   return (
-    <MaxWidthWrapper>
-      <Carousel>
-        <CarouselPrevious />
-        <CarouselContent className="shadow-lg ">
-          {/* <CarouselItem className="px-10 bg-gray-100 text-gray-950">
+    <Carousel>
+      <CarouselPrevious />
+      <CarouselContent className="shadow-lg ">
+        {/* <CarouselItem className="px-10 bg-gray-100 text-gray-950">
  
             <div className="flex lg:items-center">
               <div className="left lg:w-1/2 py-[25vh] lg:mt-0 ">
@@ -65,44 +64,43 @@ const ShowCarousel = () => {
               </div>
             </MaxWidthWrapper>
           </CarouselItem> */}
-          <CarouselItem>
-            <img
-              src={
-                "https://marketplace.canva.com/EAFoEJMTGiI/1/0/1600w/canva-beige-aesthetic-new-arrival-fashion-banner-landscape-cNjAcBMeF9s.jpg"
-              }
-              alt="ImageBanner"
-              // width={700}
-              // height={350}
-              className="w-full"
-            />
-          </CarouselItem>
+        <CarouselItem>
+          <img
+            src={
+              "https://marketplace.canva.com/EAFoEJMTGiI/1/0/1600w/canva-beige-aesthetic-new-arrival-fashion-banner-landscape-cNjAcBMeF9s.jpg"
+            }
+            alt="ImageBanner"
+            // width={700}
+            // height={350}
+            className="w-full"
+          />
+        </CarouselItem>
 
-          <CarouselItem>
-            <img
-              src={
-                "https://images.template.net/178234/fashion-facebook-ad-banner-template-edit-online.jpg"
-              }
-              alt="ImageBanner"
-              // width={700}
-              // height={350}
-              className="w-full aspect-[2/1]"
-            />
-          </CarouselItem>
-          <CarouselItem>
-            <img
-              src={
-                "https://marketplace.canva.com/EAFoEJMTGiI/1/0/1600w/canva-beige-aesthetic-new-arrival-fashion-banner-landscape-cNjAcBMeF9s.jpg"
-              }
-              alt="ImageBanner"
-              // width={700}
-              // height={350}
-              className="w-full"
-            />
-          </CarouselItem>
-        </CarouselContent>
-        <CarouselNext />
-      </Carousel>
-    </MaxWidthWrapper>
+        <CarouselItem>
+          <img
+            src={
+              "https://images.template.net/178234/fashion-facebook-ad-banner-template-edit-online.jpg"
+            }
+            alt="ImageBanner"
+            // width={700}
+            // height={350}
+            className="w-full aspect-[2/1]"
+          />
+        </CarouselItem>
+        <CarouselItem>
+          <img
+            src={
+              "https://marketplace.canva.com/EAFoEJMTGiI/1/0/1600w/canva-beige-aesthetic-new-arrival-fashion-banner-landscape-cNjAcBMeF9s.jpg"
+            }
+            alt="ImageBanner"
+            // width={700}
+            // height={350}
+            className="w-full"
+          />
+        </CarouselItem>
+      </CarouselContent>
+      <CarouselNext />
+    </Carousel>
   );
 };
 

@@ -10,19 +10,15 @@ import Search from "./Search";
 
 const Navbar: React.FC = () => {
   return (
-    <div>
-      <MaxWidthWrapper>
-        <div className="h-16 sticky py-10 flex justify-between items-center">
-          <div className="flex items-center gap-10">
-            <Link href="/">
-              <Logo />
-            </Link>
-            <Navlinks />
-          </div>
-          {/* <Navlinks /> */}
-          <NavMenu />
-        </div>
-      </MaxWidthWrapper>
+    <div className="h-16 sticky py-10 flex justify-between items-center">
+      <div className="flex items-center gap-10">
+        <Link href="/">
+          <Logo />
+        </Link>
+        <Navlinks />
+      </div>
+      {/* <Navlinks /> */}
+      <NavMenu />
     </div>
   );
 };

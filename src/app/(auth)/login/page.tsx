@@ -23,6 +23,9 @@ import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { FcGoogle } from "react-icons/fc";
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
 
 const formSchema = z.object({
   email: z.string().email(),
@@ -33,8 +36,6 @@ const formSchema = z.object({
 
 const LoginZ = () => {
   const [isSubmitting, setIsSubmittine] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
   const { data: session } = useSession();
   if (session && session.user) {
@@ -54,12 +55,13 @@ const LoginZ = () => {
   });
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmittine(true);
-    const signinResponse = await signIn("credentials", {
-      email: values.email,
-      password: values.password,
-      redirect: false,
-    });
-    console.log(signinResponse);
+    // const signinResponse = await signIn("credentials", {
+    //   email: values.email,
+    //   password: values.password,
+    //   redirect: false,
+    // });
+    // console.log(signinResponse);
+
     setIsSubmittine(false);
     // redirect("/");
   }
@@ -121,7 +123,7 @@ const LoginZ = () => {
                 <Button
                   type="submit"
                   variant="default"
-                  disabled
+                  disabled={isSubmitting}
                   className="w-full duration-300 my-10  "
                 >
                   <p className="animate-spin ml-1">

@@ -15,7 +15,7 @@ const ProductLists = ({
   link: string;
 }) => {
   return (
-    <MaxWidthWrapper className="py-20">
+    <div className="py-20">
       <div className="flex justify-between">
         <h2 className="text-lg font-semibold mb-6 ">{title}</h2>
         <Link href={`/category/${link}`}>
@@ -27,7 +27,7 @@ const ProductLists = ({
       <div className="grid w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3  gap-2">
         {children}
       </div>
-    </MaxWidthWrapper>
+    </div>
   );
 };
 

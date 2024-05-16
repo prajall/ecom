@@ -88,30 +88,8 @@ const dummyProducts: product[] = [
     category: ["shoes", "women", "men"],
   },
   {
-<<<<<<< HEAD
     id: "8",
     name: "Stylish Round Neck Sleeve Chiffon Organza",
-=======
-    id: "4",
-    name: "Nike Grey Sports Shoes",
-    underText: "Random Under text for testing",
-    image: "shoes1.jpeg",
-    price: 3000,
-    category: ["shoes", "sports", "mens"],
-  },
-
-  {
-    id: "6",
-    name: "Gorgeous Red Onepiece",
-    underText: "Random Under text for testing",
-    image: "women2.jpg",
-    price: 2100,
-    category: ["Onepieces", "women"],
-  },
-  {
-    id: "3",
-    name: "Mens Dark trouser",
->>>>>>> 9ab6dd659e4a28914306044f96024ab6de0af47c
     underText: "Nylon pant fitting size",
     image:
       "https://i.pinimg.com/564x/6f/aa/4c/6faa4c067f8a15a085e269c61d33d7ac.jpg",

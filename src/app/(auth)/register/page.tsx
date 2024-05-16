@@ -21,7 +21,7 @@ import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { FcGoogle } from "react-icons/fc";
-
+import axios from "axios";
 const formSchema = z.object({
   email: z.string().email(),
   password: z.string().min(8, {
@@ -33,9 +33,6 @@ const formSchema = z.object({
 });
 
 const LoginZ = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
   const { data: session } = useSession();
   if (session && session.user) {
     redirect("/");
@@ -53,11 +50,16 @@ const LoginZ = () => {
     },
   });
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    signIn("credentials", {
-      email: values.email,
-      password: values.password,
-      redirect: false,
-    });
+    try {
+      const registeredUser = await axios.post("/api/auth/register-user", {
+        email: values.email,
+        password: values.password,
+      });
+      console.log(registeredUser);
+    } catch (error) {
+      console.log("/register ERROR: ", error);
+    }
+
     // redirect("/");
   }
 

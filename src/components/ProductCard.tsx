@@ -46,17 +46,10 @@ const ProductCard: React.FC<ProductProp> = ({ Product }) => {
       href={`/product/${id}`}
       className="w-full group bg-gray-50 dark:bg-zinc-900 my-4 py-2 font-semibold"
     >
-<<<<<<< HEAD
       <div className="overflow-hidden relative">
         <img
           src={image}
           className=" w-full aspect-[3/4] mx-auto group-hover:scale-105 duration-300 group-hover:blur-sm"
-=======
-      <div className="overflow-hidden">
-        <Image
-          src={require(`../../public/products/${image}`)}
-          className="w-52 h-52 mb-2 rounded-md mx-auto group-hover:scale-105 duration-300"
->>>>>>> 9ab6dd659e4a28914306044f96024ab6de0af47c
           alt="tshirt"
         />
         <div className="box hidden group-hover:flex absolute z-50 top-[45%] left-[50%] translate-x-[-50%] border border-white text-white px-3 py-2">
@@ -67,13 +60,10 @@ const ProductCard: React.FC<ProductProp> = ({ Product }) => {
         <h3 className="  mt-2 text-center" title={name}>
           {shortName}
         </h3>
-<<<<<<< HEAD
         {/* <p className="text-muted-foreground text-xs mb-4 " title={underText}>
           {underText}
         </p> */}
         <p className=" mt-2 text-center text-sm">Rs {price}</p>
-=======
->>>>>>> 9ab6dd659e4a28914306044f96024ab6de0af47c
       </div>
 
       {/* </div> */}
